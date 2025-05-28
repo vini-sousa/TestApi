@@ -502,3 +502,12 @@ dist
 package-lock.json
 .vscode/launch.json
 .vscode/tasks.json
+
+# Ignorar a pasta .vscode inteira
+.vscode/
+
+# Ignorar todas as pastas obj em qualquer subdiretório
+**/[Oo]bj/
+
+# Também é bom ter para as pastas bin
+**/[Bb]in/
