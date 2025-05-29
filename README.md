@@ -96,7 +96,8 @@ By default, the API will typically be accessible at `https://localhost:7167` (HT
 
 This project includes unit tests to ensure code quality.
 
-    * Open a terminal in the root directory of the solution (the `src` folder).
+1.  **Using the .NET CLI:**
+    Open a terminal in the root directory of the solution (the `src` folder).
     * Run the following command to execute all tests in the solution:
         ```bash
         dotnet test
@@ -129,7 +130,7 @@ Some routes are protected and require a JWT token for access.
 
 2.  **Accessing Protected Routes:**
     * Copy the token received from the login response.
-    * For any protected route (e.g., `GET /api/users/me`), include the token in the `Authorization` header of your request:
+    * For any protected route (e.g., `GET /api/users/`), include the token in the `Authorization` header of your request:
         ```
         Authorization: Bearer <YOUR_JWT_TOKEN_HERE>
         ```

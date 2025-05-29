@@ -1,7 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using Midgar.Domain.Entities;
-using Midgar.ExternalServices.Interfaces;
 using Midgar.Persistence.Interfaces;
 
 namespace Midgar.API.Controllers
@@ -28,6 +27,7 @@ namespace Midgar.API.Controllers
             return user is null ? NotFound() : Ok(user);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] User user)
         {
@@ -39,6 +39,7 @@ namespace Midgar.API.Controllers
             return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] User user)
         {
@@ -57,7 +58,8 @@ namespace Midgar.API.Controllers
            
             return NoContent();
         }
-
+        
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Midgar.ExternalServices.Interfaces;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Midgar.API.Controllers
 {
