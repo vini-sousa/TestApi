@@ -28,8 +28,8 @@ Before you begin, ensure you have the following installed:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/](https://github.com/)[TestApi].git
-    cd [TestApi]
+    git clone https://github.com/vini-sousa/TestApi.git
+    cd TestApi
     ```
 
 2.  **Navigate to the API project folder:**
@@ -55,7 +55,7 @@ The main configuration files are `appsettings.json` and `appsettings.Development
     * In `Midgar.API/appsettings.Development.json`, ensure the `JwtSettings` are configured, especially the `SecretKey`.
         ```json
         "JwtSettings": {
-          "SecretKey": "YOUR_CHAVE_SECRETA_MUITO_LONGA_E_SEGURA_AQUI_PARA_DESENVOLVIMENTO", // This should be a strong key for production
+          "SecretKey": "YOUR_SECRET_KEY_HERE",
           "Issuer": "MidgarAPI",
           "Audience": "MidgarClients"
         }
@@ -91,6 +91,20 @@ The main configuration files are `appsettings.json` and `appsettings.Development
         ```
 
 By default, the API will typically be accessible at `https://localhost:7167` (HTTPS) and `http://localhost:5037` (HTTP). Check your terminal output for the exact URLs.
+
+## Running Unit Tests
+
+This project includes unit tests to ensure code quality.
+
+    * Open a terminal in the root directory of the solution (the `src` folder).
+    * Run the following command to execute all tests in the solution:
+        ```bash
+        dotnet test
+        ```
+    * To run tests for a specific test project (e.g., `Midgar.API.Tests`), you can navigate to its folder or specify the project:
+        ```bash
+        dotnet test tests/Midgar.API.Tests/Midgar.API.Tests.csproj
+        ```
 
 ## Accessing API Endpoints & Documentation
 
